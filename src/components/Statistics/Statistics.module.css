@@ -1,0 +1,7 @@
+.stat-list {
+  list-style: none;
+  text-align: start;
+  display: table;
+  margin: 0 auto;
+  padding-left: 200px;
+}

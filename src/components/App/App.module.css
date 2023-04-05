@@ -1,8 +1,6 @@
-.style {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
   height: 100vh;
   font-size: 40px;
   color: #010101;
+  text-align: center;
 }
