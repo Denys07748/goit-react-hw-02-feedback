@@ -20,28 +20,10 @@ class App extends Component {
     return Math.round(100 * (this.state.good/this.countTotalFeedback()));
   }
 
-  handleIncrementGood = () => {
+  handleIncrementFeedback = (option) => {
     this.setState(prevState => {
       return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-
-
-  handleIncrementNeutral = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-
-  
-  handleIncrementBad = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
+        [option]: prevState[option] + 1,
       };
     });
   };
@@ -51,9 +33,8 @@ class App extends Component {
       <div className={css.container}>
         <Section title='Pleace leave feedback'>
           <FeedbackOptions
-            onIncrGood={this.handleIncrementGood}
-            onIncrNeutral={this.handleIncrementNeutral}
-            onIncrBad={this.handleIncrementBad}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.handleIncrementFeedback}
           />
         </Section>
         <Section title='Statistics'>
